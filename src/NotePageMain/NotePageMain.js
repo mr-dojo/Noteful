@@ -1,8 +1,9 @@
 import React from 'react'
 import Note from '../Note/Note'
-import './NotePageMain.css'
+// import './NotePageMain.css'
 
 export default function NotePageMain(props) {
+  console.log(props);
   return (
     <section className='NotePageMain'>
       <Note
