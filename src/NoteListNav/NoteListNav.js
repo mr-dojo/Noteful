@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import CircleButton from '../CircleButton/CircleButton'
 import { countNotesForFolder } from '../notes-helpers'
-// import './NoteListNav.css'
+import './NoteListNav.css'
 
 export default function NoteListNav(props) {
   return (
@@ -30,7 +30,7 @@ export default function NoteListNav(props) {
           className='NoteListNav__add-folder-button'
         >
           <br />
-          Folder
+          Add Folder
         </CircleButton>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Note from '../Note/Note'
 import CircleButton from '../CircleButton/CircleButton'
+// import './NoteListMain.css';
 
 
 export default function NoteListMain(props) {
