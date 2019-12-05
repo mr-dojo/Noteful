@@ -63,15 +63,6 @@ export default class App extends Component {
         );
     }
 
-    // This code will eventually be used in <NotePageNav /> 
-
-    // render={routeProps => {
-    //     const {noteId} = routeProps.match.params;
-    //     const note = findNote(notes, noteId) || {};
-    //     const folder = findFolder(folders, note.folderId);
-    //     return <NotePageNav {...routeProps} folder={folder} />;
-    // }}
-
     renderMainRoutes() {
         
         return (
@@ -88,14 +79,6 @@ export default class App extends Component {
             </>
         );
     }
-
-    // This will be used to find the notes for the individual note route
-
-    // render={routeProps => {
-    //     const {noteId} = routeProps.match.params;
-    //     const note = findNote(this.state.notes, noteId);
-    //     return <NotePageMain {...routeProps} note={note} />;
-    // }}
 
     render() {
 
