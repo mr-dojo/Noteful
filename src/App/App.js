@@ -32,7 +32,7 @@ export default class App extends Component {
             if (!notesRes.ok) {
                 return notesRes.json().then(e => Promise.reject(e));
             }
-            return Promise.all([notesRes.json(), foldersRes.json()])
+            return Promise.all([foldersRes.json(), notesRes.json()])
         })
         .then(([folders, notes]) => {
             this.setState({
