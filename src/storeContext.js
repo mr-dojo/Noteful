@@ -1,9 +1,9 @@
 import React from 'react'
 
-const storeContext = React.createContext({
+const StoreContext = React.createContext({
   folders: [],
   notes: [],
   deleteNote: () => {},
 })
 
-export default storeContext;
+export default StoreContext;
