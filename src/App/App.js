@@ -5,7 +5,6 @@ import NoteListNav from '../NoteListNav/NoteListNav';
 import NotePageNav from '../NotePageNav/NotePageNav';
 import NoteListMain from '../NoteListMain/NoteListMain';
 import NotePageMain from '../NotePageMain/NotePageMain';
-// import {getNotesForFolder, findNote, findFolder} from '../notes-helpers';
 import './App.css';
 
 export default class App extends Component {
