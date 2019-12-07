@@ -7,6 +7,11 @@ function randomId() {
 
 export default class AddFolder extends React.Component {
 
+  static defaultProps = {
+      back: () => {}
+  }
+
+
   static contextType = StoreContext
 
   state = {
@@ -36,6 +41,7 @@ export default class AddFolder extends React.Component {
     })
     .then(() => {
       this.context.addFolder(newFolder);
+      this.props.back();
     })
     .catch(err => {
       throw new Error(err);
@@ -49,7 +55,6 @@ export default class AddFolder extends React.Component {
           <h1>New Folder</h1>
           <label htmlFor="folder" className="form-label">Enter Folder Name</label>
           <input type="text" name="folder" placeholder="Folder name here"></input>
-          <button type="reset" className="form-cancel">Cancel</button>
           <button type="submit" className="form-submit">Save</button>
         </form>
       </div>

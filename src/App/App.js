@@ -5,7 +5,6 @@ import NoteListNav from '../NoteListNav/NoteListNav';
 import NotePageNav from '../NotePageNav/NotePageNav';
 import NoteListMain from '../NoteListMain/NoteListMain';
 import NotePageMain from '../NotePageMain/NotePageMain';
-import AddFolder from '../AddFolder/AddFolder'
 import './App.css';
 
 export default class App extends Component {
@@ -101,7 +100,6 @@ export default class App extends Component {
             <StoreContext.Provider value={contextValue}>
                 <div className="App">
                     <nav className="App__nav">{this.renderNavRoutes()}</nav>
-                    <AddFolder />
                     <header className="App__header">
                         <h1>
                             <Link to="/">Noteful</Link>
