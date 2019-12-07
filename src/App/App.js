@@ -5,6 +5,7 @@ import NoteListNav from '../NoteListNav/NoteListNav';
 import NotePageNav from '../NotePageNav/NotePageNav';
 import NoteListMain from '../NoteListMain/NoteListMain';
 import NotePageMain from '../NotePageMain/NotePageMain';
+import AddFolder from '../AddFolder/AddFolder'
 import './App.css';
 
 export default class App extends Component {
@@ -18,6 +19,13 @@ export default class App extends Component {
                 notes: this.state.notes.filter(note => note.id !== noteId),
             })
         }
+    
+    addFolder = newFolder => {
+        this.setState({
+            folders: [...this.state.folders, newFolder],
+        })
+        console.log("Added new folder to state");
+    }
 
     componentDidMount() {
         Promise.all([
@@ -34,6 +42,7 @@ export default class App extends Component {
             return Promise.all([foldersRes.json(), notesRes.json()])
         })
         .then(([folders, notes]) => {
+            console.log(folders);
             this.setState({
                 folders: folders,
                 notes: notes,
@@ -85,12 +94,14 @@ export default class App extends Component {
             notes: this.state.notes,
             folders: this.state.folders,
             deleteNote: this.deleteNote,
+            addFolder: this.addFolder,
           }
 
         return (
             <StoreContext.Provider value={contextValue}>
                 <div className="App">
                     <nav className="App__nav">{this.renderNavRoutes()}</nav>
+                    <AddFolder />
                     <header className="App__header">
                         <h1>
                             <Link to="/">Noteful</Link>
