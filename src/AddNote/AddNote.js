@@ -7,10 +7,6 @@ function randomId() {
 
 export default class AddNote extends React.Component {
 
-  static defaultProps = {
-      back: () => {}
-  }
-
   static contextType = StoreContext
 
   state = {
@@ -46,7 +42,7 @@ export default class AddNote extends React.Component {
     })
     .then(() => {
       this.context.addNote(newNote);
-      this.props.back();
+      this.props.history.push('/');
     })
     .catch(err => {
       throw new Error(err);

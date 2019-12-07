@@ -2,8 +2,6 @@ import React from 'react'
 import CircleButton from '../CircleButton/CircleButton'
 import StoreContext from '../storeContext'
 import {findNote, findFolder} from '../notes-helpers'
-import AddFolder from '../AddFolder/AddFolder'
-import AddNote from '../AddNote/AddNote'
 import ErrorCheck from '../ErrorCheck'
 // import './NotePageNav.css'
 
@@ -31,8 +29,6 @@ export default class NotePageNav extends React.Component {
     return (
       <ErrorCheck>
         <div className='NotePageNav'>
-          <AddFolder back={back} />
-          <AddNote back={back} />
           <CircleButton
             tag='button'
             role='link'

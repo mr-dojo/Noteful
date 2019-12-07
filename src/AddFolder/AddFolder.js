@@ -7,10 +7,6 @@ function randomId() {
 
 export default class AddFolder extends React.Component {
 
-  static defaultProps = {
-      back: () => {}
-  }
-
   static contextType = StoreContext
 
   state = {
@@ -40,7 +36,7 @@ export default class AddFolder extends React.Component {
     })
     .then(() => {
       this.context.addFolder(newFolder);
-      this.props.back();
+      this.props.history.push('/');
     })
     .catch(err => {
       throw new Error(err);
