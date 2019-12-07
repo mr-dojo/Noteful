@@ -4,6 +4,7 @@ import StoreContext from '../storeContext'
 import {findNote, findFolder} from '../notes-helpers'
 import AddFolder from '../AddFolder/AddFolder'
 import AddNote from '../AddNote/AddNote'
+import ErrorCheck from '../ErrorCheck'
 // import './NotePageNav.css'
 
 export default class NotePageNav extends React.Component {
@@ -28,25 +29,27 @@ export default class NotePageNav extends React.Component {
     console.log(folder, note)
 
     return (
-      <div className='NotePageNav'>
-        <AddFolder back={back} />
-        <AddNote back={back} />
-        <CircleButton
-          tag='button'
-          role='link'
-          onClick={back}
-          className='NotePageNav__back-button'
-        >
-          <br />
-          Back
-        </CircleButton>
-        
-        {(folder) && (
-          <h3 className='NotePageNav__folder-name'>
-            {folder.name}
-          </h3>
-        )}
-      </div>
+      <ErrorCheck>
+        <div className='NotePageNav'>
+          <AddFolder back={back} />
+          <AddNote back={back} />
+          <CircleButton
+            tag='button'
+            role='link'
+            onClick={back}
+            className='NotePageNav__back-button'
+          >
+            <br />
+            Back
+          </CircleButton>
+          
+          {(folder) && (
+            <h3 className='NotePageNav__folder-name'>
+              {folder.name}
+            </h3>
+          )}
+        </div>
+      </ErrorCheck>
     )
   }
 }
