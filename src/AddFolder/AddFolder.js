@@ -11,7 +11,6 @@ export default class AddFolder extends React.Component {
       back: () => {}
   }
 
-
   static contextType = StoreContext
 
   state = {

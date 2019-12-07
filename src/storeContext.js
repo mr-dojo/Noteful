@@ -5,6 +5,7 @@ const StoreContext = React.createContext({
   notes: [],
   deleteNote: () => {},
   addFolder: () => {},
+  addNote: () => {},
 })
 
 export default StoreContext;

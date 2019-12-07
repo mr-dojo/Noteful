@@ -19,11 +19,18 @@ export default class App extends Component {
             })
         }
     
-    addFolder = newFolder => {
+    updateFolders = newFolder => {
         this.setState({
             folders: [...this.state.folders, newFolder],
         })
         console.log("Added new folder to state");
+    }
+
+    updateNotes = newNote => {
+        this.setState({
+            notes: [...this.state.notes, newNote],
+        })
+        console.log("Added new note to state");
     }
 
     componentDidMount() {
@@ -93,19 +100,22 @@ export default class App extends Component {
             notes: this.state.notes,
             folders: this.state.folders,
             deleteNote: this.deleteNote,
-            addFolder: this.addFolder,
+            addFolder: this.updateFolders,
+            addNote: this.updateNotes,
           }
 
         return (
             <StoreContext.Provider value={contextValue}>
                 <div className="App">
-                    <nav className="App__nav">{this.renderNavRoutes()}</nav>
                     <header className="App__header">
                         <h1>
                             <Link to="/">Noteful</Link>
                         </h1>
                     </header>
-                    <main className="App__main">{this.renderMainRoutes()}</main>
+                    <div className="App__container">
+                        <nav className="App__nav">{this.renderNavRoutes()}</nav>
+                        <main className="App__main">{this.renderMainRoutes()}</main>
+                    </div>
                 </div>
             </StoreContext.Provider>
         );

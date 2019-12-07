@@ -25,6 +25,17 @@ export default class NoteListMain extends React.Component {
 
     return (
       <section className='NoteListMain'>
+        <div className='NoteListMain__button-container'>
+          <CircleButton
+            tag={Link}
+            to='/add-note'
+            type='button'
+            className='NoteListMain__add-note-button'
+          >
+            <br />
+            Add Note
+          </CircleButton>
+        </div>
         <ul>
           {folderNotes.map(note =>
             <li key={note.id}>
@@ -36,17 +47,6 @@ export default class NoteListMain extends React.Component {
             </li>
           )}
         </ul>
-        <div className='NoteListMain__button-container'>
-          <CircleButton
-            tag={Link}
-            to='/add-note'
-            type='button'
-            className='NoteListMain__add-note-button'
-          >
-            <br />
-            Note
-          </CircleButton>
-        </div>
       </section>
     )
   }

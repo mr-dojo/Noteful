@@ -16,3 +16,14 @@
 .App-link {
   color: #09d3ac;
 }
+
+.App__container {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.App__nav {
+  margin-right: 50px;
+}
