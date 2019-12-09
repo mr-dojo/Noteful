@@ -15,7 +15,6 @@ export default class AddFolder extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.context.folders);
     const value = e.target.folder.value
     const newFolder = {
       id: randomId(),

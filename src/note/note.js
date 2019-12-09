@@ -5,8 +5,9 @@ import PropTypes from 'prop-types'
 
 
 export default class Note extends React.Component {
-  static contextType = StoreContext
 
+  static contextType = StoreContext
+  
   handleClickDelete = e => {
     e.preventDefault()
     const noteId = this.props.id
@@ -23,9 +24,9 @@ export default class Note extends React.Component {
         return res.json()
       })
       .then(() => {
-        this.context.deleteNote(noteId)
-        this.props.onDeleteNote(noteId)
-        console.log("Delete Ran")
+        this.context.deleteNote(noteId);
+        // this.props.history.push('/');
+        //_________________Add .push('/') here_________________
       })
       .catch(error => {
         console.error({ error })
@@ -62,6 +63,6 @@ export default class Note extends React.Component {
 
 Note.propTypes = {
   id: PropTypes.string,
-  modified: PropTypes.instanceOf(Date),
+  modified: PropTypes.string,
   name: PropTypes.string,
 };

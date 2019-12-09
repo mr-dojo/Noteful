@@ -24,7 +24,6 @@ export default class NotePageNav extends React.Component {
     const note = findNote(notes, noteId) || {};
     const folder = findFolder(folders, note.folderId);
     const back = () => this.props.history.goBack()
-    console.log(folder, note)
 
     return (
       <ErrorCheck>

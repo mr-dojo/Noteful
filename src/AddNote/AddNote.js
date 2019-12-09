@@ -18,10 +18,12 @@ export default class AddNote extends React.Component {
     const name = e.target.name.value
     const content = e.target.content.value
     const folderId = e.target.folder.value
+    const newDate = new Date();
+
     const newNote = {
       id: "note" + randomId(),
       name: name,
-      modified: Date.now(),
+      modified: newDate.toISOString(),
       folderId: folderId,
       content: content,
     }
@@ -60,7 +62,7 @@ export default class AddNote extends React.Component {
           <label htmlFor="folder" className="newNote-folder">Choose folder</label>
           <select name="folder" required>
             {this.context.folders.map(folder => {
-              return <option value={folder.id}>{folder.name}</option>
+              return <option key={folder.id} value={folder.id}>{folder.name}</option>
             })}
           </select>
           <button type="submit" className="form-submit">Save</button>

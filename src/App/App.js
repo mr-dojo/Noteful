@@ -10,9 +10,10 @@ import AddFolder from '../AddFolder/AddFolder'
 import './App.css';
 
 export default class App extends Component {
+
     state = {
         notes: [],
-        folders: []
+        folders: [],
     };
 
     deleteNote = noteId => {
@@ -25,14 +26,12 @@ export default class App extends Component {
         this.setState({
             folders: [...this.state.folders, newFolder],
         })
-        console.log("Added new folder to state");
     }
 
     updateNotes = newNote => {
         this.setState({
             notes: [...this.state.notes, newNote],
         })
-        console.log("Added new note to state");
     }
 
     componentDidMount() {
@@ -50,7 +49,6 @@ export default class App extends Component {
             return Promise.all([foldersRes.json(), notesRes.json()])
         })
         .then(([folders, notes]) => {
-            console.log(folders);
             this.setState({
                 folders: folders,
                 notes: notes,
