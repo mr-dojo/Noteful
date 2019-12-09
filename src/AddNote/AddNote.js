@@ -15,7 +15,6 @@ export default class AddNote extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.context.notes);
     const name = e.target.name.value
     const content = e.target.content.value
     const folderId = e.target.folder.value
