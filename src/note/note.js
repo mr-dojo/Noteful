@@ -1,13 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import StoreContext from '../storeContext'
-// import { format } from 'date-fns'
+import PropTypes from 'prop-types'
 
 
 export default class Note extends React.Component {
-  static defaultProps = {
-    onDeleteNote: () => {},
-  }
   static contextType = StoreContext
 
   handleClickDelete = e => {
@@ -62,3 +59,9 @@ export default class Note extends React.Component {
     )
   }
 }
+
+Note.propTypes = {
+  id: PropTypes.string.isRequired,
+  modified: PropTypes.string,
+  name: PropTypes.array.isRequired,
+};
