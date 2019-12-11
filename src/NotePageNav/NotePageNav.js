@@ -3,7 +3,6 @@ import CircleButton from '../CircleButton/CircleButton'
 import StoreContext from '../storeContext'
 import {findNote, findFolder} from '../notes-helpers'
 import ErrorCheck from '../ErrorCheck'
-// import './NotePageNav.css'
 
 export default class NotePageNav extends React.Component {
 

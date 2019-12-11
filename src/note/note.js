@@ -25,8 +25,7 @@ export default class Note extends React.Component {
       })
       .then(() => {
         this.context.deleteNote(noteId);
-        // this.props.history.push('/');
-        //_________________Add .push('/') here_________________
+        this.props.history.push('/');
       })
       .catch(error => {
         console.error({ error })
