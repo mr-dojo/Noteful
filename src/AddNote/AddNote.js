@@ -56,11 +56,11 @@ export default class AddNote extends React.Component {
         <form className="newNote-form" onSubmit={e => this.handleSubmit(e)}>
           <h1>New Note</h1>
           <label htmlFor="name" className="newNote-label">Note name</label>
-          <input type="text" name="name" placeholder="name here"></input>
+          <input type="text" name="name" placeholder="name here" aria-required="true"></input>
           <label htmlFor="content" className="newNote-label">Note content</label>
           <textarea name="content" className="newNote-content" rows="5" cols="10" placeholder="content here"></textarea>
           <label htmlFor="folder" className="newNote-folder">Choose folder</label>
-          <select name="folder" required>
+          <select name="folder" aria-required="true" required>
             {this.context.folders.map(folder => {
               return <option key={folder.id} value={folder.id}>{folder.name}</option>
             })}
