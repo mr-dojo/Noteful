@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import StoreContext from '../storeContext'
 import PropTypes from 'prop-types'
 
-
 export default class Note extends React.Component {
 
   static contextType = StoreContext
