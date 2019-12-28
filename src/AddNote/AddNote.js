@@ -1,5 +1,6 @@
 import React from 'react'
 import StoreContext from '../storeContext'
+import "./AddNote.css"
 
 function randomId() {
   return Math.random().toString()
@@ -59,21 +60,25 @@ export default class AddNote extends React.Component {
             htmlFor="name" 
             className="newNote-label"
           >
-            Note name
+            Name
           </label>
+          <br />
           <input 
             type="text" 
             name="name" 
             placeholder="name here" 
+            className="newNote-name"
             aria-required="true" 
             required
           />
+          <br />
           <label 
             htmlFor="content" 
             className="newNote-label"
           >
-            Note content
+            Content
           </label>
+          <br />
           <textarea 
             name="content" 
             className="newNote-content" 
@@ -82,14 +87,17 @@ export default class AddNote extends React.Component {
             placeholder="content here" 
             required
           />
+          <br />
           <label 
             htmlFor="folder" 
-            className="newNote-folder"
+            className="newNote-label"
           >
-            Choose folder
+            Folder
           </label>
+          <br />
           <select 
-            name="folder" 
+            name="folder"
+            className="newNote-folder" 
             aria-required="true" 
             required
           >
@@ -97,6 +105,7 @@ export default class AddNote extends React.Component {
               return <option key={folder.id} value={folder.id}>{folder.name}</option>
             })}
           </select>
+          <br />
           <button 
             type="submit" 
             className="form-submit"

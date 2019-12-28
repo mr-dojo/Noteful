@@ -24,6 +24,6 @@
   justify-content: center;
 }
 
-.App__nav {
-  margin-right: 50px;
+.App__main {
+  width: 280px;
 }
