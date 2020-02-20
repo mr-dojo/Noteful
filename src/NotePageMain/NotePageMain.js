@@ -1,43 +1,43 @@
-import React from 'react'
-import Note from '../Note/Note'
-import StoreContext from '../storeContext'
-import {findNote} from '../notes-helpers'
-import ErrorCheck from '../ErrorCheck'
-import './NotePageMain.css'
+import React from "react";
+import Note from "../Note/Note";
+import StoreContext from "../storeContext";
+import { findNote } from "../notes-helpers";
+import ErrorCheck from "../ErrorCheck";
+import "./NotePageMain.css";
 
 export default class NotePageMain extends React.Component {
   static defaultProps = {
     match: {
-      params: {},
+      params: {}
     }
-  }
+  };
 
-  static contextType = StoreContext
+  static contextType = StoreContext;
 
   handleDeleteNote = noteId => {
-    this.props.history.push(`/`)
-  }
+    this.props.history.push(`/`);
+  };
 
   render() {
-    const { notes=[] } = this.context
-    const { noteId } = this.props.match.params
-    const note = findNote(notes, noteId) || { content: '' }
+    const { notes = [] } = this.context;
+    const { noteId } = this.props.match.params;
+    const note = findNote(notes, noteId) || { content: "" };
     return (
       <ErrorCheck>
-        <section className='NotePageMain'>
+        <section className="NotePageMain">
           <Note
             id={note.id}
             name={note.name}
             modified={note.modified}
             history={this.props.history}
           />
-          <div className='NotePageMain__content'>
-            {note.content.split(/\n \r|\n/).map((para, i) =>
+          <div className="NotePageMain__content">
+            {note.content.split(/\n \r|\n/).map((para, i) => (
               <p key={i}>{para}</p>
-            )}
+            ))}
           </div>
         </section>
       </ErrorCheck>
-    )
+    );
   }
 }

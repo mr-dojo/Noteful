@@ -48,7 +48,6 @@ export default class App extends Component {
         return Promise.all([foldersRes.json(), notesRes.json()]);
       })
       .then(([folders, notes]) => {
-        console.log(folders, notes);
         this.setState({
           folders: folders,
           notes: notes

@@ -1,11 +1,10 @@
-import React from 'react'
-import CircleButton from '../CircleButton/CircleButton'
-import StoreContext from '../storeContext'
-import {findNote, findFolder} from '../notes-helpers'
-import ErrorCheck from '../ErrorCheck'
+import React from "react";
+import CircleButton from "../CircleButton/CircleButton";
+import StoreContext from "../storeContext";
+import { findNote, findFolder } from "../notes-helpers";
+import ErrorCheck from "../ErrorCheck";
 
 export default class NotePageNav extends React.Component {
-
   static defaultProps = {
     history: {
       goBack: () => {}
@@ -13,37 +12,35 @@ export default class NotePageNav extends React.Component {
     match: {
       params: {}
     }
-  }
+  };
 
-  static contextType = StoreContext
+  static contextType = StoreContext;
 
   render() {
-    const { notes, folders } = this.context
-    const {noteId} = this.props.match.params;
+    const { notes, folders } = this.context;
+    const { noteId } = this.props.match.params;
     const note = findNote(notes, noteId) || {};
     const folder = findFolder(folders, note.folderId);
-    const back = () => this.props.history.goBack()
+    const back = () => this.props.history.goBack();
 
     return (
       <ErrorCheck>
-        <div className='NotePageNav'>
+        <div className="NotePageNav">
           <CircleButton
-            tag='button'
-            role='link'
+            tag="button"
+            role="link"
             onClick={back}
-            className='NotePageNav__back-button'
+            className="NotePageNav__back-button"
           >
             <br />
             Back
           </CircleButton>
-          
-          {(folder) && (
-            <h3 className='NotePageNav__folder-name'>
-              {folder.name}
-            </h3>
+
+          {folder && (
+            <h3 className="NotePageNav__folder-name">{folder.name}</h3>
           )}
         </div>
       </ErrorCheck>
-    )
+    );
   }
 }
