@@ -23,7 +23,7 @@ export default class AddNote extends React.Component {
       content: content
     };
 
-    fetch("http://localhost:8000/api/notes", {
+    fetch("https://noteful-backend.herokuapp.com/api/notes", {
       method: "POST",
       body: JSON.stringify(newNote),
       headers: {

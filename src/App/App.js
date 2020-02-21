@@ -35,8 +35,8 @@ export default class App extends Component {
 
   componentDidMount() {
     Promise.all([
-      fetch("http://localhost:8000/api/folders"),
-      fetch("http://localhost:8000/api/notes")
+      fetch("https://noteful-backend.herokuapp.com/api/folders"),
+      fetch("https://noteful-backend.herokuapp.com/api/notes")
     ])
       .then(([foldersRes, notesRes]) => {
         if (!foldersRes.ok) {

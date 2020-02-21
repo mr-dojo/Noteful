@@ -14,7 +14,7 @@ export default class AddFolder extends React.Component {
     const newFolder = {
       name: value
     };
-    fetch("http://localhost:8000/api/folders", {
+    fetch("https://noteful-backend.herokuapp.com/api/folders", {
       method: "POST",
       body: JSON.stringify(newFolder),
       headers: {

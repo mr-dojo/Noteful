@@ -10,7 +10,7 @@ export default class Note extends React.Component {
     e.preventDefault();
     const noteId = this.props.id;
 
-    fetch(`http://localhost:8000/api/notes/${noteId}`, {
+    fetch(`https://noteful-backend.herokuapp.com/api/notes/${noteId}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json"
